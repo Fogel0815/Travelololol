@@ -10,6 +10,7 @@ import { TripSummary } from "@/components/itinerary/trip-summary";
 import { RouteRationale } from "@/components/itinerary/route-rationale";
 import { DayList } from "@/components/itinerary/day-list";
 import { AdjustmentSuggestions } from "@/components/itinerary/adjustment-suggestions";
+import { RouteMap } from "@/components/itinerary/route-map";
 import { ArrowLeft, Bookmark } from "lucide-react";
 import { saveItinerary } from "@/lib/storage";
 
@@ -84,6 +85,7 @@ export default function ItineraryPage() {
 
       <div className="space-y-6">
         <TripSummary itinerary={itinerary} />
+        <RouteMap days={itinerary.days} />
         <RouteRationale rationale={itinerary.rationale} />
         <DayList days={itinerary.days} />
         <AdjustmentSuggestions suggestions={itinerary.adjustmentSuggestions} />
