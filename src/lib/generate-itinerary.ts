@@ -2,7 +2,7 @@ import { TripInput, Itinerary, DayPlan, POI } from "./types";
 import { selectRoute } from "@/data/routes";
 import { getDrivingSegment, getRegion } from "@/data/regions";
 import { getPoisByInterests, pois } from "@/data/pois";
-import { getAccommodationSuggestion } from "@/data/accommodations";
+import { getAccommodationSuggestion, getAccommodationDetails } from "@/data/accommodations";
 import { generateId } from "./storage";
 
 const PACE_MULTIPLIER: Record<string, number> = {
@@ -93,6 +93,10 @@ function buildDayPlan(
       toRegion,
       input.accommodationType
     );
+    const accommodationDetails = getAccommodationDetails(
+      toRegion,
+      input.accommodationType
+    );
 
     const practicalNotes = buildDayNotes(
       dayRegions,
@@ -112,6 +116,8 @@ function buildDayPlan(
       stops,
       overnightRegion,
       accommodationSuggestion,
+      accommodationBookingUrl: accommodationDetails?.bookingUrl,
+      accommodationPriceRange: accommodationDetails?.priceRange,
       practicalNotes,
     });
   }

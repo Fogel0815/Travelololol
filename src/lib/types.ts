@@ -48,6 +48,15 @@ export interface AccommodationOption {
   name: string;
   priceRange: string;
   description: string;
+  bookingUrl?: string;
+}
+
+export interface RentalCarOption {
+  type: TransportMode;
+  category: string;
+  example: string;
+  pricePerDay: string;
+  notes: string;
 }
 
 export interface POI {
@@ -88,6 +97,8 @@ export interface DayPlan {
   stops: POI[];
   overnightRegion: string;
   accommodationSuggestion: string;
+  accommodationBookingUrl?: string;
+  accommodationPriceRange?: string;
   practicalNotes: string;
 }
 

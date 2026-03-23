@@ -1,5 +1,5 @@
 import { DayPlan } from "@/lib/types";
-import { Car, MapPin, Bed, Lightbulb } from "lucide-react";
+import { Car, MapPin, Bed, Lightbulb, ExternalLink } from "lucide-react";
 
 export function DayCard({ day }: { day: DayPlan }) {
   const dateFormatted = new Date(day.date).toLocaleDateString("en-US", {
@@ -49,14 +49,27 @@ export function DayCard({ day }: { day: DayPlan }) {
         </div>
       )}
 
-      <div className="mt-4 flex items-start gap-3 rounded-lg bg-muted/50 p-3">
-        <Bed className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" />
-        <div>
-          <p className="text-xs font-medium">Overnight: {day.overnightRegion}</p>
-          <p className="text-xs text-muted-foreground">
-            {day.accommodationSuggestion}
-          </p>
+      <div className="mt-4 flex items-start justify-between gap-3 rounded-lg bg-muted/50 p-3">
+        <div className="flex items-start gap-3">
+          <Bed className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground" />
+          <div>
+            <p className="text-xs font-medium">Overnight: {day.overnightRegion}</p>
+            <p className="text-xs text-muted-foreground">
+              {day.accommodationSuggestion}
+            </p>
+          </div>
         </div>
+        {day.accommodationBookingUrl && (
+          <a
+            href={day.accommodationBookingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex shrink-0 items-center gap-1 rounded-md bg-accent px-2.5 py-1 text-xs font-medium text-white transition-opacity hover:opacity-80"
+          >
+            Book
+            <ExternalLink className="h-3 w-3" />
+          </a>
+        )}
       </div>
 
       {day.practicalNotes && (

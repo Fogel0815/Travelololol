@@ -13,9 +13,9 @@ export const regions: Region[] = [
       winter: "Short days, Northern Lights possible. Cozy café culture.",
     },
     accommodationOptions: [
-      { type: "budget", name: "KEX Hostel / Bus Hostel", priceRange: "€30–60/night", description: "Social hostels in the city center" },
-      { type: "mid-range", name: "Center Hotels / Fosshotel", priceRange: "€120–200/night", description: "Well-located hotels with Icelandic character" },
-      { type: "premium", name: "The Reykjavik EDITION / Konsúlat", priceRange: "€300–500/night", description: "Luxury boutique hotels" },
+      { type: "budget", name: "KEX Hostel / Bus Hostel", priceRange: "€30–60/night", description: "Social hostels in the city center", bookingUrl: "https://www.hostel.is/" },
+      { type: "mid-range", name: "Center Hotels / Fosshotel", priceRange: "€120–200/night", description: "Well-located hotels with Icelandic character", bookingUrl: "https://www.centerhotels.com/" },
+      { type: "premium", name: "The Reykjavik EDITION / Konsúlat", priceRange: "€300–500/night", description: "Luxury boutique hotels", bookingUrl: "https://www.marriott.com/hotels/travel/rekeb-the-reykjavik-edition/" },
     ],
   },
   {
@@ -30,9 +30,9 @@ export const regions: Region[] = [
       winter: "Dramatic storms and Northern Lights over lava fields.",
     },
     accommodationOptions: [
-      { type: "budget", name: "Base Hotel / Guesthouses", priceRange: "€40–80/night", description: "Simple stays near Keflavík" },
-      { type: "mid-range", name: "Northern Light Inn", priceRange: "€140–220/night", description: "Comfortable hotel near Blue Lagoon" },
-      { type: "premium", name: "The Retreat at Blue Lagoon", priceRange: "€500–1000/night", description: "World-class spa hotel" },
+      { type: "budget", name: "Base Hotel / Guesthouses", priceRange: "€40–80/night", description: "Simple stays near Keflavík", bookingUrl: "https://www.basehotel.is/" },
+      { type: "mid-range", name: "Northern Light Inn", priceRange: "€140–220/night", description: "Comfortable hotel near Blue Lagoon", bookingUrl: "https://www.northernlightinn.is/" },
+      { type: "premium", name: "The Retreat at Blue Lagoon", priceRange: "€500–1000/night", description: "World-class spa hotel", bookingUrl: "https://www.bluelagoon.com/accommodation/the-retreat-hotel" },
     ],
   },
   {
@@ -47,9 +47,9 @@ export const regions: Region[] = [
       winter: "Accessible but icy paths. Stunning frozen Gullfoss.",
     },
     accommodationOptions: [
-      { type: "budget", name: "Golden Circle Apartments / Hostels", priceRange: "€40–70/night", description: "Self-catering near Selfoss" },
-      { type: "mid-range", name: "Hotel Geysir / Úthlíð Cottages", priceRange: "€130–200/night", description: "Scenic guesthouses near the sights" },
-      { type: "premium", name: "ION Adventure Hotel", priceRange: "€300–450/night", description: "Design hotel by Þingvellir" },
+      { type: "budget", name: "Golden Circle Apartments / Hostels", priceRange: "€40–70/night", description: "Self-catering near Selfoss", bookingUrl: "https://www.hostel.is/" },
+      { type: "mid-range", name: "Hotel Geysir / Úthlíð Cottages", priceRange: "€130–200/night", description: "Scenic guesthouses near the sights", bookingUrl: "https://www.geysircenter.com/" },
+      { type: "premium", name: "ION Adventure Hotel", priceRange: "€300–450/night", description: "Design hotel by Þingvellir", bookingUrl: "https://www.ioniceland.is/" },
     ],
   },
   {
@@ -64,9 +64,9 @@ export const regions: Region[] = [
       winter: "Moody atmosphere. Ice caves nearby (Nov–Mar).",
     },
     accommodationOptions: [
-      { type: "budget", name: "Vík HI Hostel / Puffin Hotel", priceRange: "€35–75/night", description: "Budget stays in Vík" },
-      { type: "mid-range", name: "Hotel Vík í Mýrdal / Guesthouse Carina", priceRange: "€120–200/night", description: "Comfortable options in and around Vík" },
-      { type: "premium", name: "Hotel Katla / Black Beach Suites", priceRange: "€250–400/night", description: "Premium stays with views" },
+      { type: "budget", name: "Vík HI Hostel / Puffin Hotel", priceRange: "€35–75/night", description: "Budget stays in Vík", bookingUrl: "https://www.hostel.is/hostels/vik" },
+      { type: "mid-range", name: "Hotel Vík í Mýrdal / Guesthouse Carina", priceRange: "€120–200/night", description: "Comfortable options in and around Vík", bookingUrl: "https://www.hotelvik.is/" },
+      { type: "premium", name: "Hotel Katla / Black Beach Suites", priceRange: "€250–400/night", description: "Premium stays with views", bookingUrl: "https://www.hotelkatla.is/" },
     ],
   },
   {
@@ -81,9 +81,9 @@ export const regions: Region[] = [
       winter: "Ice cave season. Limited daylight for hikes.",
     },
     accommodationOptions: [
-      { type: "budget", name: "Skaftafell Campground / Hótel Skaftafell (basic)", priceRange: "€25–70/night", description: "Basic accommodation near the park" },
-      { type: "mid-range", name: "Hótel Skaftafell / Fosshotel Glacier Lagoon", priceRange: "€140–220/night", description: "Best options near the national park" },
-      { type: "premium", name: "Fosshotel Glacier Lagoon (premium)", priceRange: "€280–400/night", description: "Premium rooms with glacier views" },
+      { type: "budget", name: "Skaftafell Campground / Hótel Skaftafell (basic)", priceRange: "€25–70/night", description: "Basic accommodation near the park", bookingUrl: "https://www.vatnajokulsthjodgardur.is/en/plan-your-visit/accommodation" },
+      { type: "mid-range", name: "Hótel Skaftafell / Fosshotel Glacier Lagoon", priceRange: "€140–220/night", description: "Best options near the national park", bookingUrl: "https://www.fosshotel.is/hotels/fosshotel-glacier-lagoon" },
+      { type: "premium", name: "Fosshotel Glacier Lagoon (premium)", priceRange: "€280–400/night", description: "Premium rooms with glacier views", bookingUrl: "https://www.fosshotel.is/hotels/fosshotel-glacier-lagoon" },
     ],
   },
   {
@@ -98,9 +98,9 @@ export const regions: Region[] = [
       winter: "Fewer icebergs but magical light. No boat tours.",
     },
     accommodationOptions: [
-      { type: "budget", name: "Skyrhúsið Guesthouse", priceRange: "€50–90/night", description: "Simple accommodation nearby" },
-      { type: "mid-range", name: "Fosshotel Glacier Lagoon / Hali Country Hotel", priceRange: "€150–250/night", description: "Well-located hotels between lagoon and Höfn" },
-      { type: "premium", name: "Fosshotel Glacier Lagoon (suites)", priceRange: "€300–450/night", description: "Premium rooms overlooking Vatnajökull" },
+      { type: "budget", name: "Skyrhúsið Guesthouse", priceRange: "€50–90/night", description: "Simple accommodation nearby", bookingUrl: "https://www.south.is/en/place/skyrhusid-guesthouse" },
+      { type: "mid-range", name: "Fosshotel Glacier Lagoon / Hali Country Hotel", priceRange: "€150–250/night", description: "Well-located hotels between lagoon and Höfn", bookingUrl: "https://www.fosshotel.is/hotels/fosshotel-glacier-lagoon" },
+      { type: "premium", name: "Fosshotel Glacier Lagoon (suites)", priceRange: "€300–450/night", description: "Premium rooms overlooking Vatnajökull", bookingUrl: "https://www.fosshotel.is/hotels/fosshotel-glacier-lagoon" },
     ],
   },
   {
@@ -115,9 +115,9 @@ export const regions: Region[] = [
       winter: "Northern Lights over Vestrahorn. Some restaurants closed.",
     },
     accommodationOptions: [
-      { type: "budget", name: "Höfn HI Hostel / Old Airline Guesthouse", priceRange: "€40–80/night", description: "Budget options in town" },
-      { type: "mid-range", name: "Hotel Höfn / Milk Factory", priceRange: "€130–200/night", description: "Comfortable hotels in Höfn" },
-      { type: "premium", name: "Hotel Höfn (premium) / Nýpugarðar", priceRange: "€220–350/night", description: "Best rooms with glacier views" },
+      { type: "budget", name: "Höfn HI Hostel / Old Airline Guesthouse", priceRange: "€40–80/night", description: "Budget options in town", bookingUrl: "https://www.hostel.is/hostels/hofn" },
+      { type: "mid-range", name: "Hotel Höfn / Milk Factory", priceRange: "€130–200/night", description: "Comfortable hotels in Höfn", bookingUrl: "https://www.hotelhofn.is/" },
+      { type: "premium", name: "Hotel Höfn (premium) / Nýpugarðar", priceRange: "€220–350/night", description: "Best rooms with glacier views", bookingUrl: "https://www.hotelhofn.is/" },
     ],
   },
   {
@@ -132,9 +132,9 @@ export const regions: Region[] = [
       winter: "Roads can close. Very remote feeling. Northern Lights.",
     },
     accommodationOptions: [
-      { type: "budget", name: "Seyðisfjörður Hostel / Berunes HI", priceRange: "€35–75/night", description: "Charming hostels in fjord villages" },
-      { type: "mid-range", name: "Hotel & Restaurant Aldan / Fosshotel Eastfjords", priceRange: "€120–200/night", description: "Character hotels in scenic villages" },
-      { type: "premium", name: "Hotel & Restaurant Aldan (suites)", priceRange: "€200–320/night", description: "Best the Eastfjords have to offer" },
+      { type: "budget", name: "Seyðisfjörður Hostel / Berunes HI", priceRange: "€35–75/night", description: "Charming hostels in fjord villages", bookingUrl: "https://www.hostel.is/" },
+      { type: "mid-range", name: "Hotel & Restaurant Aldan / Fosshotel Eastfjords", priceRange: "€120–200/night", description: "Character hotels in scenic villages", bookingUrl: "https://www.hotelaldan.is/" },
+      { type: "premium", name: "Hotel & Restaurant Aldan (suites)", priceRange: "€200–320/night", description: "Best the Eastfjords have to offer", bookingUrl: "https://www.hotelaldan.is/" },
     ],
   },
   {
@@ -149,9 +149,9 @@ export const regions: Region[] = [
       winter: "Magical frozen landscapes. Nature Baths still open.",
     },
     accommodationOptions: [
-      { type: "budget", name: "Hlíð Campground / Dimmuborgir Guesthouse", priceRange: "€30–70/night", description: "Simple stays near the lake" },
-      { type: "mid-range", name: "Fosshotel Mývatn / Sel Hotel", priceRange: "€130–210/night", description: "Comfortable lakeside hotels" },
-      { type: "premium", name: "Fosshotel Mývatn (premium) / Vogafjós", priceRange: "€250–380/night", description: "Premium rooms and farm-to-table dining" },
+      { type: "budget", name: "Hlíð Campground / Dimmuborgir Guesthouse", priceRange: "€30–70/night", description: "Simple stays near the lake", bookingUrl: "https://www.myvatnnaturebaths.is/" },
+      { type: "mid-range", name: "Fosshotel Mývatn / Sel Hotel", priceRange: "€130–210/night", description: "Comfortable lakeside hotels", bookingUrl: "https://www.fosshotel.is/hotels/fosshotel-myvatn" },
+      { type: "premium", name: "Fosshotel Mývatn (premium) / Vogafjós", priceRange: "€250–380/night", description: "Premium rooms and farm-to-table dining", bookingUrl: "https://www.vogafjos.is/" },
     ],
   },
   {
@@ -166,9 +166,9 @@ export const regions: Region[] = [
       winter: "Limited access to some falls. Húsavík quieter.",
     },
     accommodationOptions: [
-      { type: "budget", name: "Húsavík Hostel / Campground", priceRange: "€30–65/night", description: "Budget stays in Húsavík" },
-      { type: "mid-range", name: "Fosshotel Húsavík / Cape Hotel", priceRange: "€120–200/night", description: "Harbor-view hotels in Húsavík" },
-      { type: "premium", name: "Húsavík Cape Hotel (suites)", priceRange: "€220–350/night", description: "Premium rooms with bay views" },
+      { type: "budget", name: "Húsavík Hostel / Campground", priceRange: "€30–65/night", description: "Budget stays in Húsavík", bookingUrl: "https://www.hostel.is/" },
+      { type: "mid-range", name: "Fosshotel Húsavík / Cape Hotel", priceRange: "€120–200/night", description: "Harbor-view hotels in Húsavík", bookingUrl: "https://www.fosshotel.is/hotels/fosshotel-husavik" },
+      { type: "premium", name: "Húsavík Cape Hotel (suites)", priceRange: "€220–350/night", description: "Premium rooms with bay views", bookingUrl: "https://www.husavikcapehotel.is/" },
     ],
   },
   {
@@ -183,9 +183,9 @@ export const regions: Region[] = [
       winter: "Skiing at Hlíðarfjall. Christmas decorations famous.",
     },
     accommodationOptions: [
-      { type: "budget", name: "Akureyri Backpackers / City Campsite", priceRange: "€30–65/night", description: "Budget stays in town center" },
-      { type: "mid-range", name: "Hótel Akureyri / Icelandair Hotel", priceRange: "€120–200/night", description: "Central hotels with character" },
-      { type: "premium", name: "Hótel Kea / Icelandair (premium)", priceRange: "€230–380/night", description: "Best hotels in the North" },
+      { type: "budget", name: "Akureyri Backpackers / City Campsite", priceRange: "€30–65/night", description: "Budget stays in town center", bookingUrl: "https://www.akureyribackpackers.com/" },
+      { type: "mid-range", name: "Hótel Akureyri / Icelandair Hotel", priceRange: "€120–200/night", description: "Central hotels with character", bookingUrl: "https://www.hotelakureyri.is/" },
+      { type: "premium", name: "Hótel Kea / Icelandair (premium)", priceRange: "€230–380/night", description: "Best hotels in the North", bookingUrl: "https://www.keahotels.is/en/hotel-kea" },
     ],
   },
   {
@@ -200,9 +200,9 @@ export const regions: Region[] = [
       winter: "Accessible year-round. Fewer visitors.",
     },
     accommodationOptions: [
-      { type: "budget", name: "Guesthouses in Borgarnes", priceRange: "€40–70/night", description: "Simple family-run stays" },
-      { type: "mid-range", name: "Hotel Húsafell / Hotel Borgarnes", priceRange: "€120–200/night", description: "Comfortable countryside hotels" },
-      { type: "premium", name: "Hotel Húsafell (premium)", priceRange: "€250–380/night", description: "Highland-adjacent luxury" },
+      { type: "budget", name: "Guesthouses in Borgarnes", priceRange: "€40–70/night", description: "Simple family-run stays", bookingUrl: "https://www.west.is/en/accommodation" },
+      { type: "mid-range", name: "Hotel Húsafell / Hotel Borgarnes", priceRange: "€120–200/night", description: "Comfortable countryside hotels", bookingUrl: "https://www.hotelhusafell.com/" },
+      { type: "premium", name: "Hotel Húsafell (premium)", priceRange: "€250–380/night", description: "Highland-adjacent luxury", bookingUrl: "https://www.hotelhusafell.com/" },
     ],
   },
   {
@@ -217,9 +217,9 @@ export const regions: Region[] = [
       winter: "Northern Lights over Kirkjufell — iconic shot. Some roads tricky.",
     },
     accommodationOptions: [
-      { type: "budget", name: "Grundarfjörður Hostel / Campgrounds", priceRange: "€35–70/night", description: "Budget stays near Kirkjufell" },
-      { type: "mid-range", name: "Hotel & Restaurant Búðir / Fosshotel Hellnar", priceRange: "€140–230/night", description: "Atmospheric peninsula hotels" },
-      { type: "premium", name: "Hótel Búðir", priceRange: "€280–450/night", description: "One of Iceland's most romantic hotels" },
+      { type: "budget", name: "Grundarfjörður Hostel / Campgrounds", priceRange: "€35–70/night", description: "Budget stays near Kirkjufell", bookingUrl: "https://www.hostel.is/" },
+      { type: "mid-range", name: "Hotel & Restaurant Búðir / Fosshotel Hellnar", priceRange: "€140–230/night", description: "Atmospheric peninsula hotels", bookingUrl: "https://www.fosshotel.is/hotels/fosshotel-hellnar" },
+      { type: "premium", name: "Hótel Búðir", priceRange: "€280–450/night", description: "One of Iceland's most romantic hotels", bookingUrl: "https://www.hotelbudir.is/" },
     ],
   },
 ];
