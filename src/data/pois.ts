@@ -44,7 +44,7 @@ export const pois: POI[] = [
 
   // East Fjords
   { id: "seydisfjordur", name: "Seyðisfjörður", description: "Colorful artistic village at the end of a fjord — rainbow street, waterfalls, and the Smyril Line ferry.", regionId: "eastfjords", type: "town", interestTags: ["culture", "photography"], estimatedDurationHours: 1.5, seasonalAvailability: [1,2,3,4,5,6,7,8,9,10,11,12] },
-  { id: "fjadrargljufur", name: "Fjaðrárgljúfur Canyon", description: "A 100m deep mossy canyon with winding river — one of Iceland's most photogenic landscapes.", regionId: "eastfjords", type: "canyon", interestTags: ["nature", "photography", "hiking"], estimatedDurationHours: 1, seasonalAvailability: [4,5,6,7,8,9,10] },
+  { id: "fjadrargljufur", name: "Fjaðrárgljúfur Canyon", description: "A 100m deep mossy canyon with winding river — one of Iceland's most photogenic landscapes.", regionId: "south-coast", type: "canyon", interestTags: ["nature", "photography", "hiking"], estimatedDurationHours: 1, seasonalAvailability: [4,5,6,7,8,9,10] },
   { id: "stodvarfjordur", name: "Petra's Stone Collection", description: "A private museum of incredible Icelandic minerals collected over a lifetime — quirky and wonderful.", regionId: "eastfjords", type: "museum", interestTags: ["culture"], estimatedDurationHours: 0.75, seasonalAvailability: [5,6,7,8,9] },
   { id: "lagarfljot", name: "Lagarfljót Lake", description: "Iceland's 'Loch Ness' — scenic lake surrounded by Iceland's largest forest, Hallormsstaðaskógur.", regionId: "eastfjords", type: "mountain", interestTags: ["nature", "hiking"], estimatedDurationHours: 0.75, seasonalAvailability: [1,2,3,4,5,6,7,8,9,10,11,12] },
 

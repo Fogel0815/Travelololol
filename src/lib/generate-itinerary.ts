@@ -310,12 +310,45 @@ function buildDayNotes(
     notes.push("Final day — allow time for return and car drop-off.");
   }
 
-  if (month === 4) {
+  // Seasonal notes
+  if (month >= 11 || month <= 2) {
+    // Winter (Nov–Feb)
+    notes.push(`Winter daylight is limited (~4-7 hours). Plan outdoor activities around midday.`);
+    if (dayRegions.includes("eastfjords") || dayRegions.includes("north-iceland")) {
+      notes.push("Check road.is for closures — northern and eastern roads can close without warning in winter.");
+    }
+    if (dayRegions.some((r) => ["south-coast", "skaftafell", "jokulsarlon"].includes(r))) {
+      notes.push("Ice cave tours are available Nov–Mar. Book glacier guides in advance.");
+    }
+    notes.push("Northern Lights possible on clear nights. Dress for -5 to 5°C with wind chill.");
+  } else if (month >= 3 && month <= 5) {
+    // Spring (Mar–May)
     if (dayRegions.includes("eastfjords")) {
       notes.push("Check road conditions for mountain passes in the Eastfjords — spring snow is possible.");
     }
-    if (dayRegions.includes("north-iceland") || dayRegions.includes("myvatn")) {
-      notes.push("April daylight: ~14 hours. Still cool (2-8°C) — dress in layers.");
+    if (month === 3) {
+      notes.push("Early spring: ~11 hours daylight, still wintry. Some highland roads closed.");
+    } else if (month === 4) {
+      if (dayRegions.includes("north-iceland") || dayRegions.includes("myvatn")) {
+        notes.push("April daylight: ~14 hours. Still cool (2-8°C) — dress in layers.");
+      }
+    } else {
+      notes.push("May brings ~19 hours of daylight and milder temps (5-12°C). Puffins arrive!");
+    }
+  } else if (month >= 6 && month <= 8) {
+    // Summer (Jun–Aug)
+    notes.push("Midnight sun — nearly 24h daylight. No need to rush, but book activities ahead.");
+    if (dayRegions.includes("myvatn")) {
+      notes.push("Midge season at Mývatn — bring a head net and avoid calm, warm evenings near the lake.");
+    }
+    if (dayRegions.some((r) => ["south-coast", "snaefellsnes"].includes(r))) {
+      notes.push("Peak tourist season — arrive at popular waterfalls and beaches early to avoid crowds.");
+    }
+  } else {
+    // Autumn (Sep–Oct)
+    notes.push("Autumn colors and Northern Lights season begins. Daylight shrinking (~12-15h). Temps 2-10°C.");
+    if (dayRegions.includes("eastfjords") || dayRegions.includes("north-iceland")) {
+      notes.push("First snow possible in the north and east. Check road conditions daily.");
     }
   }
 
@@ -352,9 +385,33 @@ function buildRationale(
     `Total estimated driving is ~${Math.round(totalDrivingHours)} hours spread across ${input.duration} days, averaging ${(totalDrivingHours / input.duration).toFixed(1)} hours per day — well within your ${input.maxDrivingHours}-hour tolerance.`
   );
 
-  if (month === 4) {
+  if (month >= 11 || month <= 2) {
+    parts.push(
+      "Winter in Iceland means short days (4-7 hours of light), Northern Lights potential, and ice cave access. Highland and some northern roads will be closed. The Ring Road is generally passable but check conditions daily. Pack serious cold-weather gear."
+    );
+  } else if (month === 3) {
+    parts.push(
+      "Early March is still wintry with ~11 hours of daylight. Snow and ice are common, especially in the north. Crowds are minimal and prices lower. Highland roads remain closed."
+    );
+  } else if (month === 4) {
     parts.push(
       "April is shoulder season: expect around 14 hours of daylight, fewer crowds, and occasionally unpredictable weather. Some highland roads may still be closed, but the Ring Road and all main attractions are accessible. Pack layers and be flexible."
+    );
+  } else if (month === 5) {
+    parts.push(
+      "May offers long days (~19 hours of light), milder temperatures, and puffin arrivals. It's a sweet spot — most roads are open, crowds haven't peaked, and the landscape is coming alive."
+    );
+  } else if (month >= 6 && month <= 8) {
+    parts.push(
+      "Summer brings midnight sun and full access to all roads including F-roads. This is peak season — book accommodation and popular activities well in advance. Expect crowds at major sights but endless daylight for exploring."
+    );
+  } else if (month === 9) {
+    parts.push(
+      "September offers autumn colors, fewer tourists, and the first Northern Lights of the season. Most roads remain open. Temperatures cool to 5-10°C. A great balance of access and atmosphere."
+    );
+  } else if (month === 10) {
+    parts.push(
+      "October brings shorter days (~11 hours), Northern Lights, and the first real cold. Some highland roads close. Fewer tourists and lower prices. Pack warm layers and be weather-flexible."
     );
   }
 

@@ -73,13 +73,30 @@ export function TripForm() {
   const [accommodationType, setAccommodationType] = useState<AccommodationType>("mid-range");
   const [constraints, setConstraints] = useState<Constraint[]>(["iconic-sights"]);
 
-  const duration = Math.max(
-    1,
-    Math.ceil(
-      (new Date(endDate).getTime() - new Date(startDate).getTime()) /
-        (1000 * 60 * 60 * 24)
-    )
+  const rawDuration = Math.ceil(
+    (new Date(endDate).getTime() - new Date(startDate).getTime()) /
+      (1000 * 60 * 60 * 24)
   );
+  const duration = Math.max(1, rawDuration);
+  const dateError =
+    rawDuration <= 0
+      ? "End date must be after start date"
+      : rawDuration > 30
+        ? "Trip duration cannot exceed 30 days"
+        : null;
+
+  function handleStartDateChange(value: string) {
+    setStartDate(value);
+    if (new Date(value) >= new Date(endDate)) {
+      const next = new Date(value);
+      next.setDate(next.getDate() + 7);
+      setEndDate(next.toISOString().split("T")[0]);
+    }
+  }
+
+  function handleEndDateChange(value: string) {
+    setEndDate(value);
+  }
 
   function toggleInterest(interest: Interest) {
     setInterests((prev) =>
@@ -99,10 +116,11 @@ export function TripForm() {
 
   function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
+    if (isGenerating || dateError) return;
     setIsGenerating(true);
 
-    // Use setTimeout to allow UI to update
-    setTimeout(() => {
+    // Use requestAnimationFrame to let the UI update before heavy computation
+    requestAnimationFrame(() => {
       const input: TripInput = {
         startDate,
         endDate,
@@ -120,7 +138,7 @@ export function TripForm() {
       const itinerary = generateItinerary(input);
       saveItinerary(itinerary);
       router.push(`/itinerary/${itinerary.id}`);
-    }, 100);
+    });
   }
 
   return (
@@ -137,7 +155,7 @@ export function TripForm() {
             <input
               type="date"
               value={startDate}
-              onChange={(e) => setStartDate(e.target.value)}
+              onChange={(e) => handleStartDateChange(e.target.value)}
               className="h-10 w-full rounded-lg border border-border bg-card px-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring"
             />
           </div>
@@ -146,14 +164,15 @@ export function TripForm() {
             <input
               type="date"
               value={endDate}
-              onChange={(e) => setEndDate(e.target.value)}
-              className="h-10 w-full rounded-lg border border-border bg-card px-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring"
+              min={startDate}
+              onChange={(e) => handleEndDateChange(e.target.value)}
+              className={`h-10 w-full rounded-lg border px-3 text-sm focus:outline-none focus:ring-2 focus:ring-ring ${dateError ? "border-red-400 bg-red-50" : "border-border bg-card"}`}
             />
           </div>
           <div>
             <label className="mb-1.5 block text-xs font-medium text-muted-foreground">Duration</label>
-            <div className="flex h-10 items-center rounded-lg border border-border bg-muted px-3 text-sm font-medium">
-              {duration} days
+            <div className={`flex h-10 items-center rounded-lg border px-3 text-sm font-medium ${dateError ? "border-red-400 bg-red-50 text-red-600" : "border-border bg-muted"}`}>
+              {dateError ? dateError : `${duration} days`}
             </div>
           </div>
         </div>
@@ -347,7 +366,7 @@ export function TripForm() {
       <div className="pt-4">
         <button
           type="submit"
-          disabled={isGenerating || interests.length === 0}
+          disabled={isGenerating || interests.length === 0 || !!dateError}
           className="inline-flex h-12 w-full items-center justify-center gap-2 rounded-lg bg-foreground px-8 text-sm font-medium text-background transition-opacity hover:opacity-90 disabled:opacity-50 sm:w-auto"
         >
           {isGenerating ? (

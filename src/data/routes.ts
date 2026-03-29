@@ -31,7 +31,7 @@ export const routeTemplates: RouteTemplate[] = [
     description: "Cover most of the Ring Road from South Coast through the East Fjords to North Iceland, returning via the interior — a comprehensive 10-13 day journey.",
     minDays: 10,
     maxDays: 13,
-    regionSequence: ["reykjavik", "golden-circle", "south-coast", "skaftafell", "jokulsarlon", "hofn", "eastfjords", "myvatn", "akureyri", "west-iceland", "reykjavik"],
+    regionSequence: ["reykjavik", "golden-circle", "south-coast", "skaftafell", "jokulsarlon", "hofn", "eastfjords", "myvatn", "north-iceland", "akureyri", "west-iceland", "reykjavik"],
   },
   {
     id: "full-ring",
@@ -44,11 +44,17 @@ export const routeTemplates: RouteTemplate[] = [
 ];
 
 export function selectRoute(duration: number): RouteTemplate {
-  const sorted = [...routeTemplates].sort((a, b) => b.minDays - a.minDays);
-  for (const route of sorted) {
-    if (duration >= route.minDays) {
-      return route;
-    }
-  }
-  return routeTemplates[0];
+  // Find the best route where duration falls within minDays–maxDays range
+  const exact = routeTemplates.find(
+    (r) => duration >= r.minDays && duration <= r.maxDays
+  );
+  if (exact) return exact;
+
+  // Fallback: pick the route whose range is closest to the duration
+  const sorted = [...routeTemplates].sort((a, b) => {
+    const distA = Math.min(Math.abs(duration - a.minDays), Math.abs(duration - a.maxDays));
+    const distB = Math.min(Math.abs(duration - b.minDays), Math.abs(duration - b.maxDays));
+    return distA - distB;
+  });
+  return sorted[0];
 }

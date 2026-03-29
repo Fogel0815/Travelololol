@@ -15,9 +15,16 @@ export default function SavedPage() {
     setLoaded(true);
   }, []);
 
+  const [confirmDeleteId, setConfirmDeleteId] = useState<string | null>(null);
+
   function handleDelete(id: string) {
-    deleteItinerary(id);
-    setItineraries(getItineraries());
+    if (confirmDeleteId === id) {
+      deleteItinerary(id);
+      setItineraries(getItineraries());
+      setConfirmDeleteId(null);
+    } else {
+      setConfirmDeleteId(id);
+    }
   }
 
   if (!loaded) {
@@ -94,13 +101,32 @@ export default function SavedPage() {
                   ))}
                 </div>
               </Link>
-              <button
-                onClick={() => handleDelete(itinerary.id)}
-                className="ml-4 rounded-lg p-2 text-muted-foreground transition-colors hover:bg-red-50 hover:text-red-500"
-                title="Delete itinerary"
-              >
-                <Trash2 className="h-4 w-4" />
-              </button>
+              <div className="ml-4 flex items-center gap-1">
+                {confirmDeleteId === itinerary.id ? (
+                  <>
+                    <button
+                      onClick={() => handleDelete(itinerary.id)}
+                      className="rounded-lg bg-red-500 px-3 py-1.5 text-xs font-medium text-white transition-colors hover:bg-red-600"
+                    >
+                      Confirm
+                    </button>
+                    <button
+                      onClick={() => setConfirmDeleteId(null)}
+                      className="rounded-lg px-3 py-1.5 text-xs font-medium text-muted-foreground transition-colors hover:bg-muted"
+                    >
+                      Cancel
+                    </button>
+                  </>
+                ) : (
+                  <button
+                    onClick={() => handleDelete(itinerary.id)}
+                    className="rounded-lg p-2 text-muted-foreground transition-colors hover:bg-red-50 hover:text-red-500"
+                    title="Delete itinerary"
+                  >
+                    <Trash2 className="h-4 w-4" />
+                  </button>
+                )}
+              </div>
             </div>
           ))}
         </div>
